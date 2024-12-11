@@ -23,21 +23,3 @@ jobs:
     - name: Run tests
       run: |
         python -m unittest discover
-
-  build:
-    runs-on: ubuntu-latest
-    needs: test
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Create artifact
-      run: |
-        zip -r string_utils.zip string_utils.py test_string_utils.py
-
-    - name: Upload artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: string_utils
-        path: string_utils.zip
