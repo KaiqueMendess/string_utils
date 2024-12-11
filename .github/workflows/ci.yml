@@ -37,7 +37,7 @@ jobs:
         zip -r string_utils.zip string_utils.py test_string_utils.py
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: string_utils
         path: string_utils.zip
